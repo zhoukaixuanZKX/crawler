@@ -6,3 +6,10 @@ Twelve weeks of training - Web Crawler
 孟祥东   id:miaq90
 王通     id:TangJiafeng-teacher
 李凯欣   id:
+
+
+周报 2017/9/8
+01.编写了可行性研究、需求分析说明书、项目开发计划、概要设计报告
+02.使用sturts2、Hibernate创建模板收集页面的Demo 连接MySQL
+03.编写测试用例
+04.使用测试用例对Demo进行测试
