@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- 映射对应的 package -->
+<hibernate-mapping package="org.tjise.crawler">
+
+    <!-- 实体类和数据库中的表对应（如果没有这个表则新建） -->
+    <class name="LinkTypeData" table="LinkTypeData_table">
+		
+        <!-- id主键 和其他属性对应表中相应的字段（这些都是在 User.java 实体类中定义的） -->
+        <id name="id" column="group_id">
+        	<generator class="native"></generator>
+        </id>
+        <property name="linkHref" column="LinkTypeData_linkHref"></property>
+        <property name="linkText" column="LinkTypeData_linkText"></property>
+        <property name="uploadr" column="LinkTypeData_uploadr"></property>
+        <property name="read" column="LinkTypeData_read"></property>
+       
+       
+      
+    </class>
+</hibernate-mapping>
