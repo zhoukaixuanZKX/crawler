@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+         "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">   
+<validators>
+
+    <field name="website.name">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>  
+            <message><![CDATA[网站名字不能为空]]></message>
+        </field-validator>
+
+        <field-validator type="regex">  
+            <param name="regex"><![CDATA[^[a-zA-Z0-9]+$]]></param>  
+            <message><![CDATA[网站名字有无效字符]]></message>  
+        </field-validator>
+
+        <field-validator type="stringlength">  
+            <param name="maxLength">32</param>  
+               <param name="minLength">4</param>  
+               <param name="trim">true</param>  
+            <message><![CDATA[网站名字需要再4到32个字符]]></message>  
+        </field-validator>
+    </field>
+
+    <field name="website.channel">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>  
+            <message><![CDATA[网站地址不能为空]]></message>
+        </field-validator>
+
+        <field-validator type="regex">  
+            <param name="regex"><![CDATA[^[a-zA-Z0-9]+$]]></param>  
+            <message><![CDATA[网站地址有无效字符]]></message>  
+        </field-validator>
+
+        <field-validator type="stringlength">  
+               <param name="minLength">3</param>  
+               <param name="trim">true</param>  
+            <message><![CDATA[网站地址不少于3个字符]]></message>  
+        </field-validator>
+    </field>
+<!-- 
+    <field name="website.start_time">  
+       		<field-validator type="time">
+           <param name="min">0</param>
+           <param name="max">100</param>
+                   <message>age must be within 16~100</message>  
+           </field-validator>  
+    </field>
+
+   <field name="website.stop_time">
+           <field-validator type="int">
+           <param name="min">0</param>
+           <param name="max">100</param>
+                   <message>age must be within 16~100</message>  
+           </field-validator>  
+       </field>
+ -->
+       <field name="website.title"> 
+       	<field-validator type="requiredstring">
+            <param name="trim">true</param>  
+            <message><![CDATA[Xpath不能为空]]></message>
+        </field-validator>
+        
+        <field-validator type="regex">  
+          <param name="regex"><![CDATA[^[a-zA-Z0-9]+$]]></param>
+          <message>输入为无效字符</message>  
+        </field-validator>  
+        
+        <field-validator type="stringlength">  
+            <param name="maxLength">10</param>  
+               <param name="trim">true</param>  
+            <message><![CDATA[不能超过10个字符]]></message>  
+        </field-validator>
+    </field>  
+
+   
+
+<field name="website.author">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>  
+            <message><![CDATA[Xpath不能为空]]></message>
+        </field-validator>
+        
+        <field-validator type="regex">  
+          <param name="regex"><![CDATA[^[a-zA-Z0-9]+$]]></param>
+          <message>输入为无效字符</message>  
+        </field-validator>  
+        
+        <field-validator type="stringlength">  
+            <param name="maxLength">10</param>  
+               <param name="trim">true</param>  
+            <message><![CDATA[不能超过10个字符]]></message>  
+        </field-validator>
+    </field>
+
+<field name="website.pubtime">
+      	<field-validator type="requiredstring">
+            <param name="trim">true</param>  
+            <message><![CDATA[Xpath不能为空]]></message>
+        </field-validator>
+        
+        <field-validator type="regex">  
+          <param name="regex"><![CDATA[^[a-zA-Z0-9]+$]]></param>
+          <message>输入为无效字符</message>  
+        </field-validator>  
+        
+        <field-validator type="stringlength">  
+            <param name="maxLength">10</param>  
+               <param name="trim">true</param>  
+            <message><![CDATA[不能超过10个字符]]></message>  
+        </field-validator>
+    </field>
+
+<field name="website.content">
+       	<field-validator type="requiredstring">
+            <param name="trim">true</param>  
+            <message><![CDATA[Xpath不能为空]]></message>
+        </field-validator>
+        
+        <field-validator type="regex">  
+          <param name="regex"><![CDATA[^[a-zA-Z0-9]+$]]></param>
+          <message>输入为无效字符</message>  
+        </field-validator>  
+        
+        <field-validator type="stringlength">  
+            <param name="maxLength">10</param>  
+               <param name="trim">true</param>  
+            <message><![CDATA[不能超过10个字符]]></message>  
+        </field-validator>
+    </field>
+
+<field name="website.source">
+       	<field-validator type="requiredstring">
+            <param name="trim">true</param>  
+            <message><![CDATA[Xpath不能为空]]></message>
+        </field-validator>
+        
+        <field-validator type="regex">  
+          <param name="regex"><![CDATA[^[a-zA-Z0-9]+$]]></param>
+          <message>输入为无效字符</message>  
+        </field-validator>  
+        
+        <field-validator type="stringlength">  
+            <param name="maxLength">10</param>  
+               <param name="trim">true</param>  
+            <message><![CDATA[不能超过10个字符]]></message>  
+        </field-validator>
+    </field>
+
+</validators>
