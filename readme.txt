@@ -5,7 +5,7 @@ Twelve weeks of training - Web Crawler
 杨胜     id:wise345
 孟祥东   id:miaq90
 王通     id:TangJiafeng-teacher
-李凯欣   id:
+李凯欣   id:likaixin33 
 
 
 周报 2017/9/8
