@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- 映射对应的 package -->
+<hibernate-mapping package="org.tjise.crawler">
+
+    <!-- 实体类和数据库中的表对应（如果没有这个表则新建） -->
+    <class name="Rule" table="Rule_table">
+		<id name="id" column="levl_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="url" column="Rule_url"></property>
+        <property name="params" column="Rule_params"></property>
+        <property name="values" column="Rule_values"></property>
+        <property name="resultTagName" column="Rule_resultTagName"></property>
+        <property name="type" column="Rule_type"></property>
+        <property name="requestMoethod" column="Rule_requestMoethod"></property>
+    </class>
+</hibernate-mapping>
