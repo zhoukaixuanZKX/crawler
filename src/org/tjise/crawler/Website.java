@@ -8,17 +8,27 @@ public class Website {
 	private int id;
 	private String name; //站点名字
 	private String channel; //频道信息
+	private String region;  //境内外
+	private String contry;  //国家名字
+	private String language; //语种
+	
 	
 	private Time start_time; //开始时间
 	private Time stop_time; //结束时间
 	
-	private String title; //文章标题的xpath
-	private String author; //文章作者的xpath
-	private String pubtime; //发布时间的xpath
-	private String content; //正文的xpath
-	private String source; //转发来源的xpath
+	private String title; //文章标题的path
+	private String author; //文章作者的path
+	private String pubtime; //发布时间的path
+	private String content; //正文的path
+	private String source; //转发来源的path
+	private int Disable = 0;
 	
-	
+	public int getDisable() {
+		return Disable;
+	}
+	public void setDisable(int disable) {
+		Disable = disable;
+	}
 	public int getId() {
 		return id;
 	}
@@ -81,14 +91,33 @@ public class Website {
 	}
 	
 	
+	public String getRegion() {
+		return region;
+	}
+	public void setRegion(String region) {
+		this.region = region;
+	}
+	public String getContry() {
+		return contry;
+	}
+	public void setContry(String contry) {
+		this.contry = contry;
+	}
+	public String getLanguage() {
+		return language;
+	}
+	public void setLanguage(String language) {
+		this.language = language;
+	}
 	@Override
 	public String toString() {
 		return "Website [id=" + id + ", name=" + name + ", channel=" + channel
-				+ ", start_time=" + start_time + ", stop_time=" + stop_time
-				+ ", title=" + title + ", author=" + author + ", pubtime="
-				+ pubtime + ", content=" + content + ", source=" + source + "]";
+				+ ", region=" + region + ", contry=" + contry + ", language="
+				+ language + ", start_time=" + start_time + ", stop_time="
+				+ stop_time + ", title=" + title + ", author=" + author
+				+ ", pubtime=" + pubtime + ", content=" + content + ", source="
+				+ source + "]";
 	}
-	
 	
 	
 }

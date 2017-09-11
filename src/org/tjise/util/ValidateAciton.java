@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.struts2.ServletActionContext;
 import org.tjise.crawler.Operation;
 import org.tjise.crawler.Website;
 
@@ -126,6 +127,14 @@ public class ValidateAciton extends ActionSupport {
 		
 	}
 	
+	public String execute5(){
+		Operation op = new Operation();
+		op.Allupdate(String.valueOf(website.getId()),website);
+		webs = op.Allselect();
+		return "success";
+		
+	}
+	
 public void validateExecute4() {
 		
 	if(website.getName()==null || "".equals(website.getName().trim())){
@@ -139,4 +148,6 @@ public void validateExecute4() {
 		return "input";
 		
 	}
+	
+
 }

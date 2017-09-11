@@ -24,6 +24,11 @@
         	<result name="input">/success2.jsp</result>
         </action>
         
+         <action name="register5" class="org.tjise.util.ValidateAciton" method="execute5">
+        	<result name="success">/detailed.jsp</result>
+        	<result name="input">/success2.jsp</result>
+        </action>
+        
         <action name="quit" class="org.tjise.util.ValidateAciton" method="quit">
         	
         	<result name="input">/register.jsp</result>

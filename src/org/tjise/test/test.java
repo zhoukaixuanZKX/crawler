@@ -16,7 +16,7 @@ import org.tjise.crawler.Website;
 public class test {
 
 	public static void main(String[] args) {
-		// 获取 Hibernate配置信息
+		/*// 获取 Hibernate配置信息
 				Configuration configuration = new Configuration().configure();
 				// 根据 configuration建立sessionFactory
 				SessionFactory sessionFactory = configuration.buildSessionFactory();
@@ -34,8 +34,14 @@ public class test {
 				session.getTransaction().commit();
 				//关闭session和sessionFactory
 				session.close();
-				sessionFactory.close();
-
+				sessionFactory.close();*/
+		Operation op = new Operation();
+		Website w= new Website();
+		w.setContent("233333");
+		System.out.println(op.IDselect(String.valueOf(38)));
+		//op.update(String.valueOf(38), w);
+		//System.out.println(op.IDselect(String.valueOf(38)));
+		
 	}
 
 }

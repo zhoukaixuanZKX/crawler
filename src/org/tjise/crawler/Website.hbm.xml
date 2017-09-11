@@ -15,13 +15,19 @@
         </id>
         <property name="name" column="Website_name"></property>
         <property name="channel" column="Website_channel"></property>
+        <property name="region" column="Website_region" ></property>
+        <property name="contry" column="Website_contry" ></property>
+        <property name="language" column="Website_language" ></property>
+        
         <property name="start_time" column="Website_start_time"></property>
         <property name="stop_time" column="Website_stop_time"></property>
+        
         <property name="title" column="Website_title"></property>
         <property name="author" column="Website_author"></property>
         <property name="pubtime" column="Website_pubtime"></property>
         <property name="content" column="Website_content"></property>
         <property name="source" column="Website_source"></property>
+        <property name="Disable"  column="Website_Disable"></property>
 		
     </class>
 </hibernate-mapping>
