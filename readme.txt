@@ -13,3 +13,6 @@ Twelve weeks of training - Web Crawler
 02.使用sturts2、Hibernate创建模板收集页面的Demo 连接MySQL
 03.编写测试用例
 04.使用测试用例对Demo进行测试
+
+周报 2017/9/15
+01.模板部分完善了增删改查  （）
