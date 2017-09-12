@@ -87,7 +87,6 @@ public class Operation {
 		//从user里面查找（注意from后有空格）
 		//相当于“selset * from user_info；”
 		hq.append("from ").append(Website.class.getName());
-		//System.out.println(Website.class.getName());
 		//利用 session 建立 query
 		Query query = session.createQuery(hq.toString());
 		//序列化query的结果为一个list集合
@@ -106,22 +105,51 @@ public class Operation {
 		
 		return webs;
 	}
+	
+	/**
+	 * 查询ID对应的数据
+	 */
+	public List<Website> IDselect(String id){
+		SessionFactory sessionFactory = getsessionFactory();
+		Session session = Connection(sessionFactory);
+		//利用stringbuilder来连接查询语句
+		StringBuilder hq = new StringBuilder();
+		//从user里面查找（注意from后有空格）
+		//相当于“selset * from user_info；”
+		hq.append("from ").append(Website.class.getName())
+							.append(" where id =:id");
+		//利用 session 建立 query
+		Query query = session.createQuery(hq.toString());
+		query.setString("id", id);
+		System.out.println(Website.class.getName());
+		//序列化query的结果为一个list集合
+		List<Website> webs = query.list();
+		//打印每一个user信息（这里只打印了名字，你也可以打印其他信息）
+		
+		session.getTransaction().commit();
+		session.clear();
+		sessionFactory.close();
+		
+		
+		return webs;
+	}
+	
 	/**
 	 * 修改数据
 	 * @param name
 	 * @param channel
 	 */
-	public void update(String name,String channel){
+	public void update(String id,String channel){
 		SessionFactory sessionFactory = getsessionFactory();
 		Session session = Connection(sessionFactory);
 		StringBuilder hq = new StringBuilder();
 		//对比查找的操作来看，因为无门需要修改指定name的用户密码，后面需要再添加查询条件
 		//注意 from 、 where 的空格，“：name” 表示一个参数
 		hq.append("from ").append(Website.class.getName())
-		  .append(" where name=:name");
+		  .append(" where id=:id");
 		Query query = session.createQuery(hq.toString());
 		//这里就设定参数name的值为“user1”
-		query.setString("name", name);
+		query.setString("id", id);
 		System.out.println(hq);
 		List<Website> webs = query.list();
 		for(Website web : webs){
@@ -134,6 +162,44 @@ public class Operation {
 		session.clear();
 		sessionFactory.close();
 	}
+	
+	/**
+	 * 修改数据
+	 * @param name
+	 * @param channel
+	 */
+	public void Allupdate(String id,Website nweb){
+		SessionFactory sessionFactory = getsessionFactory();
+		Session session = Connection(sessionFactory);
+		StringBuilder hq = new StringBuilder();
+		//对比查找的操作来看，因为无门需要修改指定name的用户密码，后面需要再添加查询条件
+		//注意 from 、 where 的空格，“：name” 表示一个参数
+		hq.append("from ").append(Website.class.getName())
+		  .append(" where id=:id");
+		Query query = session.createQuery(hq.toString());
+		//这里就设定参数name的值为“user1”
+		query.setString("id", id);
+		System.out.println(hq);
+		List<Website> webs = query.list();
+		for(Website web : webs){
+			web.setChannel(nweb.getChannel());
+			web.setContent(nweb.getContent());
+			web.setName(nweb.getName());
+			web.setContry(nweb.getContry());
+			web.setLanguage(nweb.getLanguage());
+			web.setTitle(nweb.getTitle());
+			web.setPubtime(nweb.getPubtime());
+			web.setRegion(nweb.getRegion());
+			web.setSource(nweb.getSource());
+			web.setDisable(nweb.getDisable());
+			//注意这里是update
+			session.update(web);
+		}
+		session.getTransaction().commit();
+		session.clear();
+		sessionFactory.close();
+	}
+	
 	/**
 	 * 删除数据
 	 * @param name

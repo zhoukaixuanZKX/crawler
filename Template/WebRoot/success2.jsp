@@ -10,17 +10,19 @@
 </head>
 <body>
     <h1>现有信息:</h1> <br/>
- 		<s:form action="register3" method="post">
+ 		<s:form action="register6" method="post">
+    	 <s:textfield label="站点ID" name="website.id" tooltip="输入ID"></s:textfield>
     	 <s:textfield label="站点名字" name="website.name" tooltip="站点名字 如：百度"></s:textfield>
-    	 <s:textfield label="频道地址" name="website.channel" tooltip="频道的url地址"></s:textfield>
-    	<s:submit label="Register"   value="删除" />
+    	<s:submit label="Register"   value="详细信息" />
     	<s:submit label="Register"  action="register4"  value="修改" />
     	<s:submit label="Register"  action="quit"  value="返回" />
     	</s:form>
     	
     <c:forEach items="${webs}" var="list">
     	
-    	<pre>${list.name}:  ${list.channel} 
+    	<pre>( ${list.id} ).${list.name}:  
+    		${list.channel}  
+   
     	</pre>
     	
     
