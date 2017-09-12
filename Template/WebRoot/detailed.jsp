@@ -21,31 +21,23 @@
     <c:forEach items="${webs}" var="list">
     	<s:form action="register4" method="post">
     	
-    	 ${list.name} <br>
-    	 <s:textfield label="站点名字改为" name="website.name" tooltip="站点名字 如：百度"></s:textfield>
-        ${list.channel} <br>
-        <s:textfield label="频道地址改为" name="website.channel" tooltip="频道的url地址"></s:textfield>
-        ${list.region}<br>
+
+    	 <s:textfield label="站点名字改为" name="website.name" tooltip="站点名字 如：百度" placeholder= "${list.name}"></s:textfield>
+        <s:textfield label="频道地址改为" name="website.channel" tooltip="频道的url地址" placeholder= "${list.channel}"></s:textfield>
         <s:select name="website.region" list="#{'Territory':'境内','Abroad':'境外'}" label="境内外" headerKey="Territory" headerValue="选择境内外"></s:select>
-        ${list.contry}<br>
         <s:select name="website.contry" list="#{'CN':'中国','US':'美国','JP':'日本','UK','英国'}" label="国家" headerKey="CN" headerValue="选择国家"></s:select>
-        ${list.language}<br>
-        <s:select name="website.language" list="#{'CN':'中文','US':'英文','JP':'日文'}" label="语言" headerKey="CN" headerValue="选择语言"></s:select>
+        <s:select name="website.language" list="#{'CN':'中文','US':'英文','JP':'日文'}" label="语言" headerKey="CN" headerValue="选择语言" ></s:select>
         <br />
         <!-- 
         <s:textfield label="start_time" name="website.start_time"></s:textfield>
         <s:textfield label="stop_time" name="website.stop_time" tooltip="age must over 16"></s:textfield>
          -->
-        ${list.title}<br>
-        <s:textfield label="文章标题的path改为" name="website.title" tooltip="标签"></s:textfield>
-        ${list.author}<br>
-        <s:textfield label="文章作者的path改为" name="website.author" tooltip="标签"></s:textfield>
-        ${list.pubtime}<br>
-        <s:textfield label="发布时间的path改为" name="website.pubtime" tooltip="i标签"></s:textfield>
-        ${list.content}<br>
-        <s:textfield label="正文的path改为" name="website.content" tooltip="标签"></s:textfield>
-        ${list.source}<br>
-        <s:textfield label="转发来源的path改为" name="website.source" tooltip="标签"></s:textfield>
+
+        <s:textfield label="文章标题的path改为" name="website.title" tooltip="标签" placeholder= "${list.title}"></s:textfield>
+        <s:textfield label="文章作者的path改为" name="website.author" tooltip="标签" placeholder= "${list.author}"></s:textfield>
+        <s:textfield label="发布时间的path改为" name="website.pubtime" tooltip="标签" placeholder= "${list.pubtime}"></s:textfield>
+        <s:textfield label="正文的path改为" name="website.content" tooltip="标签" placeholder= " ${list.content}"></s:textfield>
+        <s:textfield label="转发来源的path改为" name="website.source" tooltip="标签" placeholder= "${list.source}"></s:textfield>
 		<br />
 		.......................................
        <s:select name="website.region" list="#{'turn':'是','false':'否'}" label="禁用" headerKey="false" headerValue="选择"></s:select>
