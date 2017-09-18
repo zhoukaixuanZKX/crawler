@@ -16,4 +16,4 @@ Twelve weeks of training - Web Crawler
 
 周报 2017/9/15
 01.模板部分完善了增删改查  （Template文件夹）
-02.
+02.用python写了爬虫的demo
