@@ -2,6 +2,7 @@ package org.tjise.Contact;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.List;
 
 import org.tjise.crawler.Website;
 
@@ -17,8 +18,9 @@ public class ContactPython {
 	            BufferedReader in = new BufferedReader(new InputStreamReader(pr.getInputStream()));
 	            String line;
 	            while ((line = in.readLine()) != null) {
-	                
-	                System.out.println(line);
+	            	String lines = new String(line.getBytes("utf-8"),"utf-8");
+					System.out.println(lines);
+					
 	            }
 	            
 	            in.close();
@@ -37,9 +39,11 @@ public class ContactPython {
 			Process pr = Runtime.getRuntime().exec(arg);
 			BufferedReader in = new BufferedReader(new InputStreamReader(pr.getInputStream()));
 			String line;
+
 			while ((line = in.readLine()) != null) {
+				String lines = new String(line.getBytes("UTF-8"),"GBK");
+				System.out.println(lines);
 				
-				System.out.println(line);
 			}
 			
 			in.close();

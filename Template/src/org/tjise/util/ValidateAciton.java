@@ -1,10 +1,12 @@
 package org.tjise.util;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.struts2.ServletActionContext;
+import org.tjise.Contact.ContactPython;
 import org.tjise.crawler.Operation;
 import org.tjise.crawler.Website;
 
@@ -89,7 +91,7 @@ public class ValidateAciton extends ActionSupport {
 	
 	public String execute2(){
 		Operation op = new Operation();
-		webs = op.Allselect();
+		webs = op.Allselect(false);
 		
 		return "success";
 		
@@ -98,7 +100,7 @@ public class ValidateAciton extends ActionSupport {
 	public String execute3(){
 		Operation op = new Operation();
 		op.delete(website.getName());
-		webs = op.Allselect();
+		webs = op.Allselect(false);
 		return "success";
 		
 	}
@@ -122,7 +124,7 @@ public class ValidateAciton extends ActionSupport {
 	public String execute4(){
 		Operation op = new Operation();
 		op.update(website.getName(),website.getChannel());
-		webs = op.Allselect();
+		webs = op.Allselect(true);
 		return "success";
 		
 	}
@@ -135,10 +137,10 @@ public class ValidateAciton extends ActionSupport {
 		
 	}
 	
-	public String execute5(){
+	public String execute5() throws UnsupportedEncodingException{
 		Operation op = new Operation();
 		op.Allupdate(String.valueOf(website.getId()),website);
-		webs = op.Allselect();
+		webs = op.Allselect(true);
 		return "success";
 		
 	}
@@ -151,6 +153,14 @@ public void validateExecute4() {
     }
 	}
 	
+	public String start(){
+		String str2 = "C:\\yingyong\\date\\Crawer\\Demo\\demo01.py";
+		ContactPython c = new ContactPython();
+		c.StaticContact(str2);
+		return "success";
+		
+	}
+
 	public String quit(){
 		
 		return "input";
