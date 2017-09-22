@@ -20,3 +20,6 @@ Twelve weeks of training - Web Crawler
 
 晨会内容 2017/9/18
 三个模块做整合，修改bug
+
+周报 2017/9/22
+完成模板和爬虫的对接，修改bug
