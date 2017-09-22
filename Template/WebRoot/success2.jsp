@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,16 +18,15 @@
     	<s:submit label="Register"  action="register4"  value="修改" />
     	<s:submit label="Register"  action="quit"  value="返回" />
     	</s:form>
-    	
-    <c:forEach items="${webs}" var="list">
-    	
-    	<pre>( ${list.id} ).${list.name}:  
-    		${list.channel}  
-   
-    	</pre>
-    	
     
+    <c:forEach items="${webs}" var="list">
+    	<s:form action="register6" method="post">
+    	
+    		${list.id}。${list.name}:
+    		${list.channel}  
+    	<s:submit label="Register"   value="详细信息" />
+    	</s:form>
     </c:forEach>
-
+	
 </body>
 </html>

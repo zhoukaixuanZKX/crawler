@@ -1,5 +1,6 @@
 package org.tjise.crawler;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.Time;
 
 
@@ -36,9 +37,11 @@ public class Website {
 		this.id = id;
 	}
 	public String getName() {
+		
 		return name;
 	}
-	public void setName(String name) {
+	public void setName(String name) throws UnsupportedEncodingException {
+		//String name2 = new String(name.getBytes(),"utf-8");
 		this.name = name;
 	}
 	public String getChannel() {
