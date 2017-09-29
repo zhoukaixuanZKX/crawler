@@ -23,3 +23,7 @@ Twelve weeks of training - Web Crawler
 
 周报 2017/9/22
 完成模板和爬虫的对接，修改bug
+
+周报 2017/9/29
+考虑到爬虫代码的复用性和健壮性，并为提高爬虫效率，选用scrapy框架。
+学习scrapy框架并移植了部分已实现功能。
